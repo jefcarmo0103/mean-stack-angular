@@ -38,6 +38,7 @@ app.use(session({ secret: config.secret, resave: false, saveUninitialized: true 
 // A cada require, o js é inicializado
 app.use('/login', require('./controllers/login.controller'));
 app.use('/register', require('./controllers/register.controller'));
+app.use('/questions', require('./controllers/question.controller'));
 app.use('/app', require('./controllers/app.controller'));
 
 // configuração do redirecionamento inicial é isso que indica o que vai acontecer quando for feita a chamada do 

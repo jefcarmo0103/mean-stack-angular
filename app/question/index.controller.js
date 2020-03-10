@@ -8,18 +8,16 @@
     function Controller($window, QuestionService, FlashService) {
         var vm = this;
 
-        vm.user = null;
+        vm.question = null;
         vm.saveQuestion = saveQuestion;
         vm.deleteQuestion = deleteQuestion;
 
-        initUser();
+        initQuestions();
 
-        function initUser() {
+        function initQuestions() {
             // get current user data in the API
-            QuestionService.GetAll().then(function () {
-                QuestionService.GetCurrent(userId).then(function (user) {
-                        vm.user = user;
-                    });
+            QuestionService.GetAll().then(function (data) {
+                console.log(data);
             });
             
         }
