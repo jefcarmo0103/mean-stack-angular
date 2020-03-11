@@ -17,7 +17,7 @@
         function initQuestions() {
             // get current user data in the API
             QuestionService.GetAll().then(function (data) {
-                console.log(data);
+                vm.questions = data;
             });
             
         }
@@ -32,8 +32,9 @@
                 });
         }
 
-        function deleteQuestion() {
-            QuestionService.Delete(vm.question._id)
+        function deleteQuestion(question) {
+            console.log(question);
+            QuestionService.Delete(question._id)
                 .then(function () {
                     // log user out
                     FlashService.Success('Question Deleted');

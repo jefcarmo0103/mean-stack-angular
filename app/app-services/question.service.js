@@ -19,8 +19,8 @@
             return $http.get(apiURL + '/').then(handleSuccess, handleError);
         }
 
-        function Create(user) {
-            return $http.post(apiURL, question).then(handleSuccess, handleError);
+        function Create(question) {
+            return $http.post(apiURL + '/create', question).then(handleSuccess, handleError);
         }
 
         function Delete(_id) {

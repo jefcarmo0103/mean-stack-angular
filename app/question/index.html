@@ -1,6 +1,22 @@
-<h1>My Account</h1>
+<h1>My Questions</h1>
 
 <div data-ng-init="initQuestions()"></div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th></th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr ng-repeat="question in vm.questions">
+            <td>{{question.description}}</td>
+            <td><button class="btn btn-danger" ng-click="vm.deleteQuestion(question)">Excluir</button></td>
+        </tr>
+    </tbody>
+</table>
 
 <div class="form-container">
     <form method="post">
@@ -10,7 +26,6 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" ng-click="vm.saveQuestion()">Save</button>
-            <button class="btn btn-danger" ng-click="vm.deleteQuestion()">Delete</button>
         </div>
     </form>
 </div>
